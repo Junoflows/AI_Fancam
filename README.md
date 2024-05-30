@@ -13,6 +13,36 @@
 모델의 성능을 향상시키는 방법을 제안한다. 추가 실험으로 학습 시 데이터 증강 방식으로 Grayscale 을 적용하여 모델의
 일반화 성능을 높이는 방법도 제안한다. 제안한 방법을 통해 mAP 를 0.472 에서 0.512 로 향상시켰다. 
 
+## AI 직캠이란
+<img src = 'https://github.com/Junoflows/AI_Fancam/assets/108385417/684af815-c82d-47e8-9066-86193c69971b' width = 600 height = 400 >
+
++ 초고화질 카메라로 무대 영상을 찍은 뒤 AI 기술을 활용하여 맴버별 직캠 영상을 도출하는 작업
++ 카메라 비용, 카메라맨, 공간 등의 COST를 절약할 수 있음
++ 실제 KBS에서 AI 기술을 활용한 직캠을 유튜브에 업로드 중 ([KBS 뮤직뱅크 AI 직캠](https://youtube.com/playlist?list=PLK8rVA0_KzOcra8_HmOVIfd2vBoVGaKEE&si=OeLZvWnvimkW__Gb))
++ AI 직캠의 성능을 향상시키는 것이 연구 목적
+
 ## 기존 문제점
-![image](https://github.com/Junoflows/AI_Fancam/assets/108385417/8fd7182c-48be-4f6d-8fbb-2b02dd96c136)
-+ 무대에 맴버가 겹치는 경우 
+<img src = 'https://github.com/Junoflows/AI_Fancam/assets/108385417/b76d9bea-f486-4a2f-96de-2608b84653b8' width = 600 height = 400 >
+
++ 무대에 맴버가 겹치는 경우 두 박스를 모두 학습에 포함시키면 뒤의 박스는 훈련에 방해됨(직캠으로의 역할 X)
+
+## 기존 방식의 해결 방안
+<img src = 'https://github.com/Junoflows/AI_Fancam/assets/108385417/4415663a-736a-46bc-96f2-5de8916c9ff6' width = 600 height = 400 >
+
++ 유의미한 앞의 박스도 제거되어 정보의 손실 발생
+
+## 해결 방안(핵심 아이디어)
+<img src = 'https://github.com/Junoflows/AI_Fancam/assets/108385417/ff75ffdd-5887-40c9-beea-8efacc00235c' width = 600 height = 400 >
+
++ 깊이 추정 알고리즘을 도입하여 바운딩 박스의 깊이 정보를 파악하여 앞의 박스를 검출
+
+## 연구 결과
+<img src = 'https://github.com/Junoflows/AI_Fancam/assets/108385417/2e2befea-e41d-40cf-9178-ecf4c4c6cce1' width = 600 height = 400 >
+
++ 데이터 정제 과정에 깊이 추정 모델을 도입한 모델이 기존 방식보다 성능 향상을 이뤄냈음을 확인
+
+## 시연 영상
+https://drive.google.com/drive/folders/1AIUz5S5HUWdBxJQipuqRfO0VNr_lIeQx?usp=sharing
+
++ 기존 방식의 모델과 제안한 방식의 모델의 AI 직캠 시연 영상
++ 동선이 겹쳤을 때, 빠르게 이동하는 동선 등에서 제안한 방식의 AI 직캠이 기존의 방식보다 자연스럽게 이어지는 것을 확인함
