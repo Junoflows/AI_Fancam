@@ -46,3 +46,11 @@ https://drive.google.com/drive/folders/1AIUz5S5HUWdBxJQipuqRfO0VNr_lIeQx?usp=sha
 
 + 기존 방식의 모델과 제안한 방식의 모델의 AI 직캠 시연 영상
 + 동선이 겹쳤을 때, 빠르게 이동하는 동선 등에서 제안한 방식의 AI 직캠이 기존의 방식보다 자연스럽게 이어지는 것을 확인함
+
+
+## Open Source 및 모델
+[OpenMMlab - mmedetection](https://github.com/open-mmlab)
++ detection을 위한 tool로써 open source 인 OpenMMlab의 mmdetection 사용
++ detection 모델은 2024.05.01 기준 SOTA를 달성한 Co-Detr 모델 사용
++ Depth Estimation 모델은 2023.12에 올라온 Marigold 모델 사용
+  + 새로운 이미지에 대한 성능이 좋은 Zero-shot 능력이 뛰어난 모델
